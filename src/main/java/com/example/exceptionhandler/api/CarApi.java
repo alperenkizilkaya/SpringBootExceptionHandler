@@ -17,7 +17,7 @@ public class CarApi {
     private CarService carService;
 
     @GetMapping
-    public ResponseEntity<Car> getCarDetails(String brand) throws CarNotFoundException {
+    public ResponseEntity<Object> getCarDetails(String brand) throws CarNotFoundException {
         if(brand.startsWith("1"))
             throw new IllegalArgumentException();
         return ResponseEntity.ok(carService.getCarDetails(brand));
